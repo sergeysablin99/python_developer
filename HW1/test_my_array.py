@@ -2,17 +2,8 @@ import pytest
 from my_array import Array
 
 
-def startup():
-     Array()
-     return True
-
-
-def test_startup():
-    assert startup()
-
-
 def int_startup():
-    Array(1)
+    Array('i', 1)
     return True
 
 
@@ -29,16 +20,16 @@ def test_str_startup():
         str_startup()
 
 
-a = Array(1, 2, 3, 4, 5)
+a = Array('i', 1, 2, 3, 4, 5)
 
 
-def iter():
+def iterate():
     b = [_ for _ in a]
     return b
 
 
 def test_iter():
-    assert iter() == [1, 2, 3, 4, 5]
+    assert iterate() == [1, 2, 3, 4, 5]
 
 
 def test_len():
@@ -61,7 +52,7 @@ def test_index():
 
 
 def test_count():
-    b = Array(1, 1, 2)
+    b = Array('i', 1, 1, 2)
     assert b.count(1) == 2
 
 
